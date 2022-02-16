@@ -1,0 +1,76 @@
+@import "../variables";
+@import "../mixin";
+
+footer{
+    background-color: $headerBg;
+    padding: 5% 0;
+    .#{&}__top{
+      @include flex-box(space-evenly,row,flex-start);
+    }
+    @include flex-box(space-around,column);
+    .#{&}__right{
+      @include flex-box(space-evenly,row,flex-start);
+      width: 60%;
+      &__link{
+        @include logo(25%);
+      }
+      &__description{
+        width: 100%;
+        @include flex-box(space-around,row,flex-start);
+        & > * {
+          width: 33%;
+        }
+        h5{
+          color: $footerText;
+          font-size:medium;
+          margin: 10% 20%;
+        }
+        ul > * {
+          margin: 10%;
+        }
+      }
+    }
+    .#{&}__left{
+      @include flex-box();
+      width: 20%;
+      a{
+        font-size: 200%;
+      }
+    }
+}
+
+@media screen and (max-width: 1224px) {
+    footer{
+      .#{&}__top{
+        @include flex-box(space-evenly,column,flex-start);
+      }
+      .#{&}__right{
+        @include flex-box(space-evenly,column,flex-start);
+        width: 100%;
+        margin-bottom: 10%;
+        &__link{
+          @include logo(30%);
+          margin: 5%;
+        }
+        &__description{
+          @include flex-box(space-around,column,flex-start);
+          & > * {
+            width: 100%;
+          }
+          h5{
+            margin: 5%;
+          }
+          ul > * {
+            margin: 5% 0;
+          }
+        }
+      }
+      .#{&}__left{
+        @include flex-box();
+        margin-left: 10%;
+        a{
+          margin-left: 20%;
+        }
+      }
+  }
+}

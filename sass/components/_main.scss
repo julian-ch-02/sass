@@ -1,0 +1,63 @@
+@import "../variables";
+@import "../mixin";
+
+main {
+    @include flex-box(space-evenly,column);
+    background: $mainBgCover;
+    background-size: 175%;
+    background-position:46% 4%;
+    padding: 15% 0;
+    .#{&}__description {
+      @include main-element();
+      font-size: 800%;
+      text-indent: -3.3em;
+      width: 60%;
+      text-align: center;
+      transform: translateX(15%);
+      
+    }
+    .#{&}__sub-description{
+      @include main-element();
+      font-size: larger;
+    }
+    .#{&}__button{
+      color: $mainButton;
+      margin: 2%;
+      padding: 1% 2%;
+      background-color: $mainTextLight;
+      border-radius: 500px;
+      &:hover{
+        color: $mainButton;
+        transform: scale(1.1);
+      }
+    }
+}
+
+@media screen and (max-width: 1224px) {
+  main {
+    background: $phoneBgCover;
+    background-size: 215%;
+    background-position:center top 40%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    @include flex-box(center,column);
+    .#{&}__description {
+      @include main-element();
+      font-size: 300%;
+      text-indent: 0em;
+      width: 70%;
+      text-align: center;
+      transform: translateX(0);
+    }
+    .#{&}__sub-description{
+      @include main-element();
+      font-size: medium;
+      text-align: center;
+      width: 80%;
+    }
+    .#{&}__button{
+      padding: 5%;
+      border-radius: 500px;
+    }
+  }
+}

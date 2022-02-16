@@ -1,0 +1,17 @@
+@mixin flex-box($justifyContent: space-around,$direction: row,$align-items: center){
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $align-items;
+    flex-direction: $direction;
+}
+@mixin main-element(){
+    padding-bottom: 2%;
+    color: $textHover;
+}
+
+@mixin logo($container:8%, $img:100%){
+    width: $container;
+    &__title{
+        width: $img;
+    }
+}
